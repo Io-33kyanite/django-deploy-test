@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,15 @@
     <title>index</title>
 </head>
 <body>
-    hello, world by static!
+    <h1>ようこそIoriのブログへ</h1>
+
+    <h2>最新の投稿一覧</h2>
+
+    {% for post in posts.all %}
+        <a href="{% url 'showBody' post.id %}">{{ post.title }}</a>
+        <br /><br />
+        {{ post.published }}
+        <br /><br />
+    {% endfor %}
 </body>
 </html>
